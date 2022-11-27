@@ -21,5 +21,8 @@ defmodule EctoMaterializedPath.Path do
 
   def load(value), do: { :ok, value }
 
+  # o(n log n) runtime
+  def equal?(value1, value2), do: Enum.sort(value1) == Enum.sort(value2)
+
   def type, do: EctoMaterializedPath.Path
 end
